@@ -8,11 +8,15 @@ public class Eyes : MonoBehaviour
 {
     [SerializeField] Renderer eyesRenderer;
 
+    [Header("Blinking")]
     [SerializeField] int eyeLidTextureXLength = 3;
-    [SerializeField] int eyeLidIndex = 0;
     [SerializeField] bool isBlinking = false;
     [SerializeField] float timeBetweenBlinks = 3;
     [SerializeField] float blinkFrameStay = 0.1f;
+
+    [Header("Pupil")]
+    [SerializeField, Range(0, 1)] float maxPupilOffsetX = 0.3f;
+    [SerializeField, Range(0, 1)] float maxPupilOffsetY = 0.13f;
 
     [Header("UI")]
     [SerializeField] Slider eyeLidSlider;
@@ -51,6 +55,11 @@ public class Eyes : MonoBehaviour
 
     public void ChangePupil(Vector2 pupilOffset)
     {
+        pupilOffset.x = Mathf.Clamp(pupilOffset.x, -1, 1);
+        pupilOffset.y = Mathf.Clamp(pupilOffset.y, -1, 1);
+        pupilOffset.x *= maxPupilOffsetX;
+        pupilOffset.y *= maxPupilOffsetY;
+
         eyesRenderer.material.SetTextureOffset("_PupilTex", pupilOffset);
     }
 
