@@ -6,3 +6,4 @@ Included is a URP Shader Graph for masking out the eyes and an example script to
 
 https://github.com/Pur-Cell/Eye-Test/assets/37848523/213858a6-71ff-496f-8c40-1946ac662018
 
+Character model by Kenney https://kenney.nl/
