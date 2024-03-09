@@ -9,7 +9,7 @@ public class Eyes : MonoBehaviour
     [SerializeField] Renderer eyesRenderer;
 
     [Header("Blinking")]
-    [SerializeField] int eyeLidTextureXLength = 3;
+    [SerializeField] int eyeLidTextureXLength = 3; // Must be set to the number of sprites in the blink texture
     [SerializeField] bool isBlinking = false;
     [SerializeField] float timeBetweenBlinks = 3;
     [SerializeField] float blinkFrameStay = 0.1f;
